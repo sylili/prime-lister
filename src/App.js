@@ -1,22 +1,23 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import { findPrimes } from './primeFounder/findPrimes';
 
 function App() {
+  const [upperLimit, setLimit] = useState('');
+
+  const handleNumberChange = (event) => {
+    setLimit(event.target.value);
+  };
+
+  const primes = findPrimes(upperLimit);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Prime founder</h1>
+        <h3>Insert the upper limit of the range you want to search in</h3>
+        <input value={upperLimit} onChange={handleNumberChange} />
+        <p>{primes}</p>
       </header>
     </div>
   );
