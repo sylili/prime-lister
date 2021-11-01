@@ -1,6 +1,6 @@
 # Prime founder app
 
-This app founds the prime numbers in the range you set.
+This app finds the prime numbers in the range you set.
 
 # Instructions
 
